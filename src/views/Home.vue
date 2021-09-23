@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <v-header :text="headerText" />
     <v-modal
       :isShow="showModal"
       :error="serverErrorText"
@@ -42,7 +41,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { mapActions, mapState } from "vuex";
-import VHeader from "../components/VHeader.vue";
 import VModal from "../components/VModal.vue";
 import VDateInput from "../components/VDateInput.vue";
 import VSelect from "../components/VSelect.vue";
@@ -51,7 +49,6 @@ export default defineComponent({
   name: "Home",
   components: {
     VSelect,
-    VHeader,
     VDateInput,
     VModal,
   },
@@ -68,7 +65,6 @@ export default defineComponent({
       selectedCurrency: "",
       // ======================
       // view section start
-      headerText: "Добро пожаловать",
       showModal: false,
       modalHeaderText: "Пожалуйста, выберите дату и валюту",
       serverErrorText: "",

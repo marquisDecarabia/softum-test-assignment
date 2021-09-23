@@ -1,6 +1,5 @@
 <template>
   <div class="result">
-    <v-header :text="headerText" />
     <div>
       <p>Выбранная валюта: {{ chosenCurrency }}</p>
       <p>Выбранная дата: {{ chosenDate }}</p>
@@ -34,19 +33,12 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { mapActions, mapState } from "vuex";
-import VHeader from "../components/VHeader.vue";
 import VRateInfo from "../components/VRateInfo.vue";
 
 export default defineComponent({
   name: "Result",
   components: {
-    VHeader,
     VRateInfo,
-  },
-  data() {
-    return {
-      headerText: "Результат",
-    };
   },
   created() {
     if (!this.isAllSet) this.$router.go(-1);
