@@ -1,6 +1,15 @@
 <template>
-  <router-view />
+  <layout-default>
+    <router-view />
+  </layout-default>
 </template>
+
+<script>
+import LayoutDefault from "@/layouts/default";
+export default {
+  components: { LayoutDefault },
+};
+</script>
 
 <style>
 @import "~normalize.css";
